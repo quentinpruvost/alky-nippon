@@ -1,6 +1,6 @@
 <script lang="ts">
-    // Correction des imports Lucide pour les réseaux sociaux
-    import { Instagram, Youtube, Facebook, Twitter } from 'lucide-svelte';
+    // On remplace les logos de marques par des icônes d'action universelles
+    import { Camera, Video, Share2, Send } from 'lucide-svelte';
 </script>
 
 <footer class="bg-[#111] text-white pt-20 pb-10">
@@ -15,10 +15,10 @@
                     Blog voyage dédié au Japon : conseils pratiques, itinéraires, bons plans et découvertes pour un voyage inoubliable.
                 </p>
                 <div class="flex gap-4 text-gray-400">
-                    <a href="/" aria-label="Instagram" class="hover:text-white transition-colors"><Instagram size={18} /></a>
-                    <a href="/" aria-label="Youtube" class="hover:text-white transition-colors"><Youtube size={18} /></a>
-                    <a href="/" aria-label="Facebook" class="hover:text-white transition-colors"><Facebook size={18} /></a>
-                    <a href="/" aria-label="Twitter" class="hover:text-white transition-colors"><Twitter size={18} /></a>
+                    <a href="/" aria-label="Instagram" class="hover:text-white transition-colors"><Camera size={18} /></a>
+                    <a href="/" aria-label="Youtube" class="hover:text-white transition-colors"><Video size={18} /></a>
+                    <a href="/" aria-label="Facebook" class="hover:text-white transition-colors"><Share2 size={18} /></a>
+                    <a href="/" aria-label="Twitter" class="hover:text-white transition-colors"><Send size={18} /></a>
                 </div>
             </div>
 
@@ -33,7 +33,7 @@
                     <ul class="flex flex-col gap-3">
                         {#each col.links as link}
                             <li>
-                                <a href="/" class="text-xs text-gray-500 hover:text-jp-red transition-colors capitalize">{link}</a>
+                                <a href="/" class="text-xs text-gray-500 hover:text-jp-red transition-colors">{link}</a>
                             </li>
                         {/each}
                     </ul>
@@ -41,7 +41,7 @@
             {/each}
         </div>
 
-        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p class="text-[10px] text-gray-600">© 2026 Japon Voyage — Tous droits réservés</p>
             <div class="flex gap-6 text-[10px] text-gray-600 uppercase tracking-widest">
                 <a href="/" class="hover:text-white transition-colors">Mentions légales</a>
