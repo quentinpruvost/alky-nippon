@@ -1,17 +1,17 @@
 import * as Icons from 'lucide-svelte';
 
 export type Feature = {
-    icon: keyof typeof Icons; // On force l'icône à être une clé valide de Lucide
+    icon: keyof typeof Icons;
     title: string;
     desc: string;
 };
 
 export const navLinks = [
-    { name: 'DESTINATIONS', href: '#' },
-    { name: 'PRÉPARER SON VOYAGE', href: '#' },
-    { name: 'CONSEILS', href: '#' },
-    { name: 'ITINÉRAIRES', href: '#' },
-    { name: 'BLOG', href: '#' },
+    { name: 'DESTINATIONS', href: '/destinations' },
+    { name: 'PRÉPARER SON VOYAGE', href: '/preparer' },
+    { name: 'CONSEILS', href: '/conseils' },
+    { name: 'ITINÉRAIRES', href: '/itineraires' },
+    { name: 'BLOG', href: '/blog' },
 ];
 
 export const features: Feature[] = [
