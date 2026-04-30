@@ -6,6 +6,9 @@ export type Feature = {
     desc: string;
 };
 
+// On change le nom global ici si besoin
+export const siteName = "AlkyNippon";
+
 export const navLinks = [
     { name: 'DESTINATIONS', href: '/destinations' },
     { name: 'PRÉPARER SON VOYAGE', href: '/preparer' },
