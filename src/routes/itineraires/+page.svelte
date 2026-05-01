@@ -101,7 +101,7 @@
 	/>
 </svelte:head>
 
-<div class="min-h-screen bg-[#faf9f6] pt-32 pb-20 flex flex-col items-center">
+<div id="configurateur" class="min-h-screen bg-[#faf9f6] pt-32 pb-20 flex flex-col items-center scroll-mt-28">
     
     {#if step === 'quiz'}
         <div class="w-full max-w-3xl h-1.5 bg-gray-200 fixed top-24 left-1/2 -translate-x-1/2 z-50 rounded-full overflow-hidden">

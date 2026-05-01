@@ -23,9 +23,13 @@
 		</div>
 	</a>
 
-	<div class="hidden items-center gap-8 lg:flex">
+	<div class="hidden max-w-[52%] flex-wrap items-center justify-end gap-x-5 gap-y-2 xl:max-w-none xl:flex-nowrap xl:gap-x-7 2xl:gap-x-8 lg:flex">
 		{#each navLinks as link}
-			<a href={link.href} class="text-xs font-bold tracking-widest text-black transition-colors hover:text-[#bc002d]">
+			<a
+				href={link.href}
+				title={link.title}
+				class="whitespace-nowrap text-[10px] font-bold tracking-[0.18em] text-black transition-colors hover:text-[#bc002d] xl:text-xs xl:tracking-widest"
+			>
 				{link.name}
 			</a>
 		{/each}
@@ -73,6 +77,7 @@
 		{#each navLinks as link}
 			<a
 				href={link.href}
+				title={link.title}
 				class="block border-b border-gray-100 py-4 text-xs font-bold uppercase tracking-widest text-black hover:text-[#bc002d]"
 				onclick={() => (open = false)}
 			>

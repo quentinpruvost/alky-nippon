@@ -38,6 +38,7 @@
 				<h4 class="mb-6 text-[11px] font-bold uppercase tracking-widest text-white">Préparer</h4>
 				<ul class="flex flex-col gap-3">
 					<li><a href="/preparer" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Outils & checklist</a></li>
+					<li><a href="/commander" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Commander un guide</a></li>
 					<li><a href="/conseils" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Conseils</a></li>
 					<li><a href="/itineraires" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Itinéraires</a></li>
 					<li><a href="/blog" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Blog</a></li>

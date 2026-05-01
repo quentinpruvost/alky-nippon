@@ -1,5 +1,11 @@
 import * as Icons from 'lucide-svelte';
 
+export type NavLink = {
+	name: string;
+	href: string;
+	title?: string;
+};
+
 export type Feature = {
     icon: keyof typeof Icons;
     title: string;
@@ -9,11 +15,13 @@ export type Feature = {
 // On change le nom global ici si besoin
 export const siteName = "AlkyNippon";
 
-export const navLinks = [
+export const navLinks: NavLink[] = [
     { name: 'DESTINATIONS', href: '/destinations' },
     { name: 'PRÉPARER SON VOYAGE', href: '/preparer' },
+    { name: 'COMMANDER', href: '/commander', title: 'Commander un guide personnalisé' },
     { name: 'CONSEILS', href: '/conseils' },
     { name: 'ITINÉRAIRES', href: '/itineraires' },
+    { name: 'CARTE', href: '/carte', title: 'Carte interactive du Japon' },
     { name: 'BLOG', href: '/blog' },
 ];
 

@@ -84,3 +84,13 @@ export function getArticles(): Article[] {
 export function getArticle(slug: string): Article | undefined {
 	return articles.find((a) => a.slug === slug);
 }
+
+/** Articles du même rubrique en priorité, puis les autres (exclut le slug courant). */
+export function getRelatedArticles(slug: string, limit = 2): Article[] {
+	const current = getArticle(slug);
+	if (!current) return [];
+	const others = articles.filter((a) => a.slug !== slug);
+	const sameCat = others.filter((a) => a.category === current.category);
+	const diffCat = others.filter((a) => a.category !== current.category);
+	return [...sameCat, ...diffCat].slice(0, limit);
+}

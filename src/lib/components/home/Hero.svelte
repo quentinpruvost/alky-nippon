@@ -40,6 +40,10 @@
         <a href="/destinations" class="bg-[#bc002d] text-white px-10 py-5 text-[11px] font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 shadow-xl">
           Découvrir les guides →
         </a>
+
+        <a href="/commander" class="border border-white/45 px-10 py-5 text-[11px] font-bold tracking-widest uppercase text-white hover:bg-white hover:text-black transition-all duration-300">
+          Commander un guide
+        </a>
         
         <a href="#newsletter" class="flex items-center gap-4 group">
             <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-[#bc002d] group-hover:border-[#bc002d] transition-all">
