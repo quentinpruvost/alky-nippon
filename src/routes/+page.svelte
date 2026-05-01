@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/home/Hero.svelte';
+	import QuizHighlight from '$lib/components/home/QuizHighlight.svelte';
 	import Features from '$lib/components/home/Features.svelte';
 	import PopularArticles from '$lib/components/home/PopularArticles.svelte';
 	import InteractiveMap from '$lib/components/home/InteractiveMap.svelte';
@@ -16,6 +17,7 @@
 
 <main class="pt-20">
   <Hero />
+  <QuizHighlight />
   <Features />
   <PopularArticles />
   <InteractiveMap />
