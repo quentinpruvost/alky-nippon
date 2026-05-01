@@ -50,6 +50,7 @@
 					<li><a href="/a-propos" class="text-xs text-gray-500 transition-colors hover:text-jp-red">À propos</a></li>
 					<li><a href="/contact" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Contact</a></li>
 					<li><a href="/mentions-legales" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Mentions légales</a></li>
+					<li><a href="/mentions-legales#partenaires" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Liens partenaires</a></li>
 					<li><a href="/confidentialite" class="text-xs text-gray-500 transition-colors hover:text-jp-red">Confidentialité</a></li>
 				</ul>
 			</div>

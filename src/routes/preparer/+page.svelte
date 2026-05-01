@@ -1,63 +1,87 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	import { Train, Wifi, Hotel, Map, Camera, CreditCard, CheckCircle } from 'lucide-svelte';
+	import AffiliateNote from '$lib/components/partners/AffiliateNote.svelte';
+	import PartnerToolkit from '$lib/components/partners/PartnerToolkit.svelte';
+	import {
+		partnerJrPass,
+		partnerPocketWifi,
+		officialSuicaWelcome,
+		partnerBookingJapan,
+		partnerKlookJapan,
+		partnerAmazonGear
+	} from '$lib/data/partners';
 
 	type Tool = {
 		title: string;
 		desc: string;
-		link: string;
+		href: string;
+		rel: string;
 		icon: typeof Train;
 		tag: string;
 		cta: string;
 		highlight?: boolean;
 	};
 
+	const jr = partnerJrPass();
+	const wifi = partnerPocketWifi();
+	const suica = officialSuicaWelcome();
+	const bk = partnerBookingJapan();
+	const kl = partnerKlookJapan();
+
 	const essentials: Tool[] = [
 		{
-			title: 'JR Pass Officiel',
-			desc: 'Le sésame pour traverser le Japon en Shinkansen. Rentable dès un aller-retour Tokyo-Osaka.',
-			link: 'https://www.jrpass.com/fr',
+			title: 'JR Pass',
+			desc: 'Le sésame pour traverser le Japon en Shinkansen. Rentable dès un aller-retour Tokyo–Osaka.',
+			href: jr.href,
+			rel: jr.rel,
 			icon: Train,
 			tag: 'Indispensable',
-			cta: 'Calculer mon trajet',
+			cta: 'Voir les pass',
 			highlight: true
 		},
 		{
-			title: 'Pocket WiFi',
-			desc: 'Connexion 4G illimitée pour toute la famille. Récupération à l’aéroport d’arrivée.',
-			link: 'https://www.google.com/search?q=pocket+wifi+japan+rental',
+			title: 'Wi‑Fi pocket ou eSIM',
+			desc: 'Connexion mobile pour plusieurs appareils — retrait aéroport ou livraison selon offres.',
+			href: wifi.href,
+			rel: wifi.rel,
 			icon: Wifi,
-			tag: 'Best-seller',
-			cta: 'Réserver ma borne'
+			tag: 'Connexion',
+			cta: 'Comparer les offres'
 		},
 		{
 			title: 'Suica / Pasmo',
-			desc: 'La carte de transport prépayée pour le métro, les bus et même les distributeurs.',
-			link: 'https://www.jreast.co.jp/multi/en/welcome.html',
+			desc: 'Carte prépayée JR East pour transports et paiements du quotidien — infos officielles.',
+			href: suica.href,
+			rel: suica.rel,
 			icon: CreditCard,
-			tag: 'Pratique',
-			cta: 'Commander ma carte'
+			tag: 'Officiel JR East',
+			cta: 'Page Welcome Suica'
 		}
 	];
 
 	const booking: Tool[] = [
 		{
 			title: 'Booking.com',
-			desc: 'Notre sélection de Ryokans traditionnels avec Onsen privés.',
-			link: 'https://www.booking.com',
+			desc: 'Ryokan, business hotels et annulation flexible — filtrez par quartier à Tokyo, Kyoto ou Osaka.',
+			href: bk.href,
+			rel: bk.rel,
 			icon: Hotel,
 			tag: 'Logement',
-			cta: 'Voir la sélection'
+			cta: 'Chercher un hôtel'
 		},
 		{
-			title: 'Klook Activities',
-			desc: 'Billets TeamLab, Ghibli Park et Universal Studios Japan au meilleur prix.',
-			link: 'https://www.klook.com',
+			title: 'Klook',
+			desc: 'TeamLab, Universal Studios Japan, transferts privés — souvent avec files coupe-file.',
+			href: kl.href,
+			rel: kl.rel,
 			icon: Map,
-			tag: 'Expériences',
-			cta: 'Réserver mes billets'
+			tag: 'Activités',
+			cta: 'Réserver une activité'
 		}
 	];
+
+	const amazonGear = partnerAmazonGear();
 </script>
 
 <svelte:head>
@@ -109,6 +133,10 @@
 	</nav>
 
 	<div class="container mx-auto px-6 py-24 lg:px-24">
+		<div class="mb-16 max-w-3xl">
+			<AffiliateNote />
+		</div>
+
 		<section id="indispensables" class="mb-32 scroll-mt-36">
 			<div class="grid gap-8 lg:grid-cols-3">
 				{#each essentials as item}
@@ -133,8 +161,8 @@
 							<p class="mb-10 text-sm leading-relaxed text-gray-500">{item.desc}</p>
 						</div>
 						<a
-							href={item.link}
-							rel="noopener noreferrer"
+							href={item.href}
+							rel={item.rel}
 							target="_blank"
 							class="group/btn mt-auto flex items-center justify-between border-t border-gray-50 pt-8"
 						>
@@ -170,8 +198,8 @@
 							<p class="mb-8 text-sm leading-relaxed text-gray-500">{item.desc}</p>
 						</div>
 						<a
-							href={item.link}
-							rel="noopener noreferrer"
+							href={item.href}
+							rel={item.rel}
 							target="_blank"
 							class="group/btn mt-auto flex items-center justify-between border-t border-gray-50 pt-8"
 						>
@@ -201,11 +229,11 @@
 					</p>
 					<div class="flex flex-wrap gap-4">
 						<a
-							href="https://www.amazon.fr"
-							rel="noopener noreferrer"
+							href={amazonGear.href}
+							rel={amazonGear.rel}
 							target="_blank"
 							class="bg-white px-10 py-5 text-[11px] font-bold uppercase tracking-widest text-black transition-all hover:bg-[#bc002d] hover:text-white"
-							>Consulter le guide Amazon</a
+							>Sélection Amazon voyage</a
 						>
 						<a
 							href="/blog/kyoto-lieux-incontournables"
@@ -272,6 +300,16 @@
 			</div>
 		</section>
 	</div>
+
+	<section class="border-y border-gray-100 bg-[#faf9f6] py-20 lg:py-24">
+		<div class="container mx-auto max-w-5xl px-6 lg:px-24">
+			<PartnerToolkit
+				kicker="Monétisation transparente"
+				title="Réservez vos vols, trains et nuits — nous soutenez sans surpayeur"
+				variant="compact"
+			/>
+		</div>
+	</section>
 
 	<section class="border-y border-gray-100 bg-white py-32 text-center">
 		<div class="container mx-auto px-6">

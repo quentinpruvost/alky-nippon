@@ -5,6 +5,7 @@
 	import PopularArticles from '$lib/components/home/PopularArticles.svelte';
 	import InteractiveMap from '$lib/components/home/InteractiveMap.svelte';
 	import Newsletter from '$lib/components/home/Newsletter.svelte';
+	import PartnerToolkit from '$lib/components/partners/PartnerToolkit.svelte';
 </script>
 
 <svelte:head>
@@ -19,6 +20,15 @@
   <Hero />
   <QuizHighlight />
   <Features />
+  <section class="border-y border-gray-200/70 bg-[#faf9f6] py-14 lg:py-20">
+    <div class="container mx-auto max-w-6xl px-6 lg:px-24">
+      <PartnerToolkit
+        variant="compact"
+        kicker="Réserver malin"
+        title="Hôtels, billets et JR Pass — les plateformes qu’on utilise vraiment"
+      />
+    </div>
+  </section>
   <PopularArticles />
   <InteractiveMap />
   <Newsletter />

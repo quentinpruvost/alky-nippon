@@ -1,3 +1,7 @@
+<script lang="ts">
+	import PartnerToolkit from '$lib/components/partners/PartnerToolkit.svelte';
+</script>
+
 <svelte:head>
 	<title>Commander votre guide — AlkyNippon</title>
 	<meta
@@ -128,6 +132,16 @@
 					</a>
 				</div>
 			</div>
+		</div>
+	</section>
+
+	<section class="border-y border-gray-200/90 bg-[#faf9f6] py-16 lg:py-20">
+		<div class="mx-auto max-w-5xl px-6 lg:px-12">
+			<p class="mb-8 max-w-2xl text-sm leading-relaxed text-jp-gray">
+				Une fois votre dossier demandé, bloquez vos grandes lignes : vols, Shinkansen et premières nuits. Ces liens nous aident à
+				faire vivre AlkyNippon tout en vous orientant vers des réservations fiables.
+			</p>
+			<PartnerToolkit kicker="Après la commande" title="Réservez trains, vols et hébergements" />
 		</div>
 	</section>
 

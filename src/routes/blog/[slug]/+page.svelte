@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
+	import PartnerToolkit from '$lib/components/partners/PartnerToolkit.svelte';
 	import type { PageProps } from './$types';
 
 	let { data } = $props() as PageProps;
@@ -54,6 +55,14 @@
 			<p class="text-sm text-jp-gray">
 				Gardez cette page sous la main pour vos réservations — ou envoyez-la à vos compagnons de voyage.
 			</p>
+		</div>
+
+		<div class="mt-14">
+			<PartnerToolkit
+				variant="compact"
+				kicker="Passer à l’action"
+				title="Réserver votre prochaine étape au Japon"
+			/>
 		</div>
 
 		<footer class="mt-12 flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
