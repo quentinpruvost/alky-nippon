@@ -41,12 +41,12 @@
           Découvrir les guides →
         </a>
         
-        <button class="flex items-center gap-4 group">
+        <a href="#newsletter" class="flex items-center gap-4 group">
             <div class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center group-hover:bg-[#bc002d] group-hover:border-[#bc002d] transition-all">
                 <div class="w-0 h-0 border-y-[6px] border-y-transparent border-l-[10px] border-l-white ml-1"></div>
             </div>
-            <span class="text-white text-[11px] font-bold tracking-widest uppercase">Voir la vidéo</span>
-        </button>
+            <span class="text-white text-[11px] font-bold tracking-widest uppercase">Newsletter</span>
+        </a>
       </div>
     </div>
   </div>

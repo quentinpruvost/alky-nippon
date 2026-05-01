@@ -10,7 +10,7 @@
   };
 </script>
 
-<section class="py-16 border-b border-gray-100 bg-white">
+<section id="pourquoi-alkynippon" class="scroll-mt-28 py-16 border-b border-gray-100 bg-white">
   <div class="container mx-auto px-6 lg:px-24">
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
       {#each features as item}

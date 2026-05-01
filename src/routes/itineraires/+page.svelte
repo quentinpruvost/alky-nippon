@@ -93,6 +93,14 @@
     }
 </script>
 
+<svelte:head>
+	<title>Configurateur d’itinéraire — AlkyNippon</title>
+	<meta
+		name="description"
+		content="Questionnaire pour personnaliser votre voyage au Japon : préférences, budget, saison — puis choix de formule."
+	/>
+</svelte:head>
+
 <div class="min-h-screen bg-[#faf9f6] pt-32 pb-20 flex flex-col items-center">
     
     {#if step === 'quiz'}
