@@ -99,7 +99,7 @@
 						L'essentiel pour structurer votre projet sans vous ruiner.
 					</p>
 					<ul class="mt-8 space-y-3 text-sm text-jp-black">
-						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Pdf personnalité (version simplifiée)</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> PDF personnalisé (version simplifiée)</li>
 						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Grandes étapes du voyage</li>
 						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Recommandations adaptées</li>
 					</ul>
@@ -114,7 +114,7 @@
 				<!-- COMPLÈTE -->
 				<div class="relative flex flex-col border-2 border-[#bc002d] bg-white p-10 shadow-xl">
 					<span
-						class="absolute right-6 top-6 bg-[#bc002d] px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white"
+						class="absolute -top-3 left-4 sm:left-auto sm:right-4 bg-[#bc002d] px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-white whitespace-nowrap"
 						>Recommandée ⭐</span
 					>
 					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-[#bc002d]">Le choix idéal</span>
@@ -124,10 +124,10 @@
 						Notre formule la plus appréciée pour un voyage organisé et serein, sans mauvaise surprise.
 					</p>
 					<ul class="mt-8 space-y-3 text-sm text-jp-black">
-						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> <strong>Pdf personnalisé complet prêt a l'emploi</strong></li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> <strong>PDF complet, prêt à l'emploi</strong></li>
 						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Itinéraire jour par jour détaillé</li>
 						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Budget précis et optimisé</li>
-						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Conseil transport</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Conseils transport inclus</li>
 						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Activités et lieux concrets</li>
 					</ul>
 					<a

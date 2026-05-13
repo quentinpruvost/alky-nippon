@@ -305,7 +305,7 @@
 		<div class="container mx-auto max-w-5xl px-6 lg:px-24">
 			<PartnerToolkit
 				kicker="Monétisation transparente"
-				title="Réservez vos vols, trains et nuits — nous soutenez sans surpayeur"
+				title="Réservez vos vols, trains et nuits — soutenez-nous sans surpayer"
 				variant="compact"
 			/>
 		</div>

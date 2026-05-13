@@ -1,6 +1,8 @@
-@import "tailwindcss";
-@config "../../tailwind.config.js";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap');
 
 :root {
   background-color: white;
@@ -9,9 +11,22 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  @apply antialiased text-[#1a1a1a];
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  color: #1a1a1a;
 }
 
 .font-serif {
   font-family: 'Playfair Display', serif;
+}
+
+/* Fix global : empêcher tout débordement horizontal */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }

@@ -17,7 +17,7 @@ export const siteName = "AlkyNippon";
 
 export const navLinks: NavLink[] = [
   { name: "DESTINATIONS", href: "/destinations" },
-  { name: "PRÉPARER SON VOYAGE", href: "/preparer" },
+  { name: "PRÉPARER", href: "/preparer", title: "Préparer son voyage au Japon" },
   {
     name: "COMMANDER",
     href: "/commander",

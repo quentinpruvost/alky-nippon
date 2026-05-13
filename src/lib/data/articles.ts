@@ -72,7 +72,7 @@ const articles: Article[] = [
     readTime: "12 min",
     date: "10 mai 2026",
     image:
-      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80",
+      "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",
     content: `
 			<p>Naviguer dans les réseaux de transport japonais peut paraître intimidant de prime abord : des dizaines de compagnies privées cohabitent avec le réseau national JR (Japan Railways), le tout interconnecté dans de gigantesques gares labyrinthiques. Heureusement, deux outils simplifient radicalement la vie des voyageurs : le Japan Rail Pass (JR Pass) et les cartes à puce IC (Suica, Pasmo, Icoca).</p>
 
@@ -126,7 +126,7 @@ const articles: Article[] = [
     readTime: "14 min",
     date: "02 mai 2026",
     image:
-      "https://images.unsplash.com/photo-1624253329394-07805228e467?w=1200&q=80",
+      "https://images.unsplash.com/photo-1528360983277-13d401cdc186?w=1200&q=80",
     content: `
 			<p>Ancienne capitale du Japon pendant plus d'un millénaire, Kyoto abrite une densité stupéfiante de trésors culturels : plus de 1600 temples bouddhistes, 400 sanctuaires shinto, d'innombrables jardins zen et 17 sites classés au patrimoine mondial de l'UNESCO. Mais cette abondance est aussi le plus grand piège pour le voyageur : vouloir tout voir, courir d'un bout à l'autre de la ville, et finir par faire une "overdose de temples". Voici comment organiser vos visites de manière stratégique et respectueuse.</p>
 
@@ -172,7 +172,7 @@ const articles: Article[] = [
     readTime: "10 min",
     date: "15 avril 2026",
     image:
-      "https://images.unsplash.com/photo-1522850959076-3297a3115053?w=1200&q=80",
+      "https://images.unsplash.com/photo-1478436127897-769e1b3f0f36?w=1200&q=80",
     content: `
 			<p>Choisir la date de son voyage au Japon est la décision la plus impactante que vous prendrez. L'archipel japonais s'étirant tout en longueur du nord au sud, il possède quatre saisons extrêmement marquées qui métamorphosent totalement les paysages, l'ambiance, mais aussi le prix des billets d'avion et la fréquentation touristique.</p>
 
@@ -227,7 +227,7 @@ const articles: Article[] = [
     readTime: "11 min",
     date: "28 avril 2026",
     image:
-      "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&q=80",
+      "https://images.unsplash.com/photo-1551410224-699683e2b8c1?w=1200&q=80",
     content: `
 			<p>Le Japon est une société où l'harmonie collective (le "Wa") prime sur l'individualisme. De nombreuses règles de politesse, souvent invisibles pour un œil étranger, régissent le quotidien. Si les Japonais sont très indulgents envers les touristes ("les étrangers ne savent pas"), respecter ces codes vous ouvrira de nombreuses portes et vous vaudra le respect et l'aide précieuse des locaux.</p>
 
@@ -328,12 +328,12 @@ const articles: Article[] = [
     readTime: "8 min",
     date: "10 janvier 2026",
     image:
-      "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80",
+      "https://images.unsplash.com/photo-1569050467447-ce54b3bbc37d?w=1200&q=80",
     content: `
 			<p>Si vous pensez que les Japonais mangent des sushis tous les jours, vous faites fausse route. Le sushi reste un plat de fête, de sortie spécifique, ou pris sur le pouce. Le véritable socle de la gastronomie nippone (le <em>Washoku</em>) est infiniment plus varié, cuit, frit, et souvent basé sur des bouillons complexes. Voici les incontournables à tester sur place.</p>
 
 			<h2>1. Les Ramen : La religion nationale</h2>
-			<p>Originaire de Chine mais élevé au rang d'art au Japon, le ramen est un grand bol de nouilles baignant dans un bouillon intensely parfumé. Chaque région a sa spécialité :</p>
+			<p>Originaire de Chine mais élevé au rang d'art au Japon, le ramen est un grand bol de nouilles baignant dans un bouillon intensément parfumé. Chaque région a sa spécialité :</p>
 			<ul>
 				<li><strong>Tonkotsu :</strong> (Hakata/Fukuoka) Bouillon épais et laiteux à base d'os de porc bouillis des heures.</li>
 				<li><strong>Miso :</strong> (Sapporo/Hokkaido) Bouillon riche au soja fermenté, souvent garni de maïs et de beurre.</li>
@@ -373,7 +373,7 @@ const articles: Article[] = [
     readTime: "7 min",
     date: "02 février 2026",
     image:
-      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80",
+      "https://images.unsplash.com/photo-1513407030348-c983a97b98d8?w=1200&q=80",
     content: `
 			<p>La première fois que l'on regarde un plan complet des transports de Tokyo, cela ressemble à un plat de spaghettis de toutes les couleurs explosé sur un mur. Avec près de 40 millions de passagers quotidiens, des gares grandes comme de petites villes et une douzaine de compagnies privées concurrentes, le réseau tokyoïte est légendaire. Pourtant, grâce à une signalétique redoutablement efficace, il est très facile de s'y retrouver avec quelques clés de compréhension.</p>
 

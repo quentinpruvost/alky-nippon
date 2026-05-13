@@ -23,13 +23,13 @@
 	<meta name="description" content={lead} />
 </svelte:head>
 
-<section class="relative flex h-[70vh] items-center justify-center overflow-hidden">
-	<img src={hero} alt="" class="absolute inset-0 h-full w-full object-cover" role="presentation" />
-	<div class="absolute inset-0 bg-black/40"></div>
+<section class="relative flex h-[70vh] items-center justify-center overflow-hidden pt-20" style="min-height:500px;">
+	<img src={hero} alt="Vue de {title}" class="absolute inset-0 h-full w-full object-cover" role="presentation" />
+	<div class="absolute inset-0 bg-black/45"></div>
 
 	<div class="relative text-center text-white" in:fly={{ y: 30, duration: 1000 }}>
-		<span class="mb-4 block text-xl font-bold tracking-[0.5em] opacity-80" aria-hidden="true">{kanji}</span>
-		<h1 class="font-serif text-7xl md:text-9xl">{title}</h1>
+		<span class="mb-4 block text-lg sm:text-xl font-bold tracking-[0.5em] opacity-80" aria-hidden="true">{kanji}</span>
+		<h1 class="font-serif text-5xl sm:text-7xl md:text-9xl">{title}</h1>
 	</div>
 </section>
 

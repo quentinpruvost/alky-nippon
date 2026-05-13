@@ -18,10 +18,10 @@
 					Guides et outils pour préparer le Japon : destinations, blog pratique et configurateur d’itinéraire.
 				</p>
 				<div class="flex gap-4 text-gray-400">
-					<a href="/contact" aria-label="Instagram" class="transition-colors hover:text-white"><Camera size={18} /></a>
-					<a href="/contact" aria-label="Youtube" class="transition-colors hover:text-white"><Video size={18} /></a>
-					<a href="/contact" aria-label="Partager" class="transition-colors hover:text-white"><Share2 size={18} /></a>
-					<a href="/contact" aria-label="Contact" class="transition-colors hover:text-white"><Send size={18} /></a>
+					<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="transition-colors hover:text-white"><Camera size={18} /></a>
+					<a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="transition-colors hover:text-white"><Video size={18} /></a>
+					<a href="https://www.pinterest.fr" target="_blank" rel="noopener noreferrer" aria-label="Pinterest" class="transition-colors hover:text-white"><Share2 size={18} /></a>
+					<a href="/contact" aria-label="Nous contacter" class="transition-colors hover:text-white"><Send size={18} /></a>
 				</div>
 			</div>
 

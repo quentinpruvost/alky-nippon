@@ -22,7 +22,7 @@
 					<span class="text-[11px] font-bold uppercase tracking-[0.22em] text-[#bc002d]">Carte vivante</span>
 				</div>
 				<span class="text-[10px] uppercase tracking-[0.18em] text-jp-gray">
-					Légende · préfectures avec contenu plus foncées
+					Légende · préfectures avec contenu plus foncées
 				</span>
 			</div>
 			<h1 class="max-w-3xl font-serif text-5xl italic leading-tight text-jp-black md:text-6xl">
