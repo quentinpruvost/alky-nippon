@@ -2,14 +2,17 @@
 	import { fly } from 'svelte/transition';
 	import PartnerToolkit from '$lib/components/partners/PartnerToolkit.svelte';
 	import type { PageProps } from './$types';
+	import SEO from '$lib/components/SEO.svelte';
 
 	let { data } = $props() as PageProps;
 </script>
 
-<svelte:head>
-	<title>{data.article.title} | AlkyNippon</title>
-	<meta name="description" content={data.article.excerpt} />
-</svelte:head>
+<SEO 
+	title="{data.article.title} | AlkyNippon" 
+	description={data.article.excerpt} 
+	image={data.article.image}
+	type="article" 
+/>
 
 <article class="bg-[#faf9f6]">
 	<header class="relative min-h-[52vh] overflow-hidden md:min-h-[58vh]">
@@ -45,10 +48,9 @@
 		</div>
 	</div>
 
-	<div class="article-body mx-auto max-w-3xl px-6 pb-24 pt-14 lg:px-12 lg:pb-28 lg:pt-20">
-		{#each data.article.paragraphs as p}
-			<p class="article-p mb-8 text-[1.05rem] leading-[1.85] text-jp-gray last:mb-0">{p}</p>
-		{/each}
+	<div class="article-body mx-auto max-w-3xl px-6 pb-24 pt-14 lg:px-12 lg:pb-28 lg:pt-20 text-[1.05rem] leading-[1.85] text-jp-gray">
+		{@html data.article.content}
+
 
 		<div class="mt-16 flex flex-wrap gap-4 border-y border-gray-200 py-10">
 			<span class="w-full text-[10px] font-bold uppercase tracking-[0.22em] text-jp-gray">Partager le magazine</span>
@@ -114,7 +116,45 @@
 		border-left: 3px solid #bc002d;
 	}
 
-	.article-body > .article-p:first-of-type::first-letter {
+	/* Rich Text Styles */
+	:global(.article-body h2) {
+		font-family: 'Playfair Display', serif;
+		font-size: 2rem;
+		color: #1a1a1a;
+		margin-top: 3rem;
+		margin-bottom: 1.5rem;
+		line-height: 1.3;
+	}
+
+	:global(.article-body h3) {
+		font-family: 'Playfair Display', serif;
+		font-size: 1.5rem;
+		color: #1a1a1a;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	:global(.article-body p) {
+		margin-bottom: 1.5rem;
+	}
+
+	:global(.article-body ul) {
+		list-style-type: disc;
+		padding-left: 1.5rem;
+		margin-bottom: 2rem;
+		margin-top: 1rem;
+	}
+
+	:global(.article-body li) {
+		margin-bottom: 0.5rem;
+	}
+
+	:global(.article-body strong) {
+		color: #1a1a1a;
+		font-weight: 700;
+	}
+
+	:global(.article-body > p:first-of-type::first-letter) {
 		float: left;
 		margin-right: 0.55rem;
 		margin-top: 0.15rem;
@@ -126,7 +166,7 @@
 	}
 
 	@media (max-width: 640px) {
-		.article-body > .article-p:first-of-type::first-letter {
+		:global(.article-body > p:first-of-type::first-letter) {
 			font-size: 3rem;
 		}
 	}

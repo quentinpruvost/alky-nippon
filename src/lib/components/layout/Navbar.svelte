@@ -225,7 +225,7 @@
 	></button>
 	<div
 		id="mobile-nav"
-		class="absolute left-0 right-0 top-full z-[95] border-b border-gray-100 bg-white px-6 py-6 shadow-lg lg:hidden"
+		class="fixed left-0 right-0 top-[73px] z-[95] border-b border-gray-100 bg-white px-6 py-6 shadow-lg lg:hidden"
 	>
 		{#each navLinks as link}
 			<a

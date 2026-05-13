@@ -170,7 +170,7 @@
                     <button 
                         disabled={isSubmitting}
                         onclick={() => handlePaymentAndSubmit('BASIQUE')} 
-                        class="mt-auto w-full bg-black text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-[#bc002d] transition-all disabled:opacity-50"
+                        class="mt-auto w-full bg-[#bc002d] text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-black transition-all disabled:opacity-50"
                     >
                         {#if isSubmitting && selectedPlan === 'BASIQUE'}
                             <span class="flex items-center justify-center gap-2">
@@ -223,7 +223,7 @@
                     <button 
                         disabled={isSubmitting}
                         onclick={() => handlePaymentAndSubmit('PREMIUM')} 
-                        class="mt-auto w-full bg-black text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-[#bc002d] transition-all disabled:opacity-50"
+                        class="mt-auto w-full bg-[#bc002d] text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-black transition-all disabled:opacity-50"
                     >
                         {#if isSubmitting && selectedPlan === 'PREMIUM'}
                             <span class="flex items-center justify-center gap-2">

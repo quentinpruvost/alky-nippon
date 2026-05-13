@@ -105,7 +105,7 @@
 					</ul>
 					<a
 						href="/itineraires#configurateur"
-						class="mt-10 bg-jp-black py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#bc002d]"
+						class="mt-10 bg-[#bc002d] py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-jp-black"
 					>
 						Choisir Basique
 					</a>
@@ -153,7 +153,7 @@
 					</ul>
 					<a
 						href="/itineraires#configurateur"
-						class="mt-10 bg-jp-black py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#bc002d]"
+						class="mt-10 bg-[#bc002d] py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-jp-black"
 					>
 						Choisir Premium
 					</a>
