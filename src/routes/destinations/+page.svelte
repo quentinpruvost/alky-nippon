@@ -45,7 +45,7 @@
 
 		<p class="text-lg leading-relaxed text-jp-gray">
 			Trois villes pour structurer un premier voyage ou un retour au Japon : la mégalopole, l’ancienne capitale impériale,
-			et la capitale gourmande du Kansai. Chaque guide reprend la même grille éditoriale — lisible, visuelle, actionnable.
+			et la capitale gourmande du Kansai. Chaque guide reprend la même grille éditoriale — lisible, visuelle, pratique.
 		</p>
 	</div>
 

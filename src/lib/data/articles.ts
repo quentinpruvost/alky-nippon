@@ -1,26 +1,28 @@
 export type Article = {
-	slug: string;
-	title: string;
-	excerpt: string;
-	category: string;
-	categoryColor: string;
-	readTime: string;
-	date: string;
-	image: string;
-	content: string; // Updated to rich HTML
+  slug: string;
+  title: string;
+  excerpt: string;
+  category: string;
+  categoryColor: string;
+  readTime: string;
+  date: string;
+  image: string;
+  content: string; // Updated to rich HTML
 };
 
 const articles: Article[] = [
-	{
-		slug: 'itineraire-2-semaines-japon',
-		title: 'Itinéraire 2 semaines au Japon : le guide expert et ultra-complet',
-		excerpt: 'Tokyo, Hakone, Kyoto, Osaka : un rythme réaliste entre grandes étapes et temps libre, avec tous nos repères logistiques, conseils de réservation et astuces sur place.',
-		category: 'Itinéraires',
-		categoryColor: 'text-jp-red',
-		readTime: '15 min',
-		date: '15 mai 2026',
-		image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80',
-		content: `
+  {
+    slug: "itineraire-2-semaines-japon",
+    title: "Itinéraire 2 semaines au Japon : le guide expert et ultra-complet",
+    excerpt:
+      "Tokyo, Hakone, Kyoto, Osaka : un rythme réaliste entre grandes étapes et temps libre, avec tous nos repères logistiques, conseils de réservation et astuces sur place.",
+    category: "Itinéraires",
+    categoryColor: "text-jp-red",
+    readTime: "15 min",
+    date: "15 mai 2026",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80",
+    content: `
 			<p>Quatorze jours, c'est souvent la durée idéale pour une première découverte du Japon. Ce laps de temps permet de lier la frénésie ultra-moderne de Tokyo à l'héritage impérial de Kyoto et au dynamisme gastronomique d'Osaka, sans avoir l'impression de courir un marathon quotidien. L'idée fondatrice d'un bon itinéraire est d'alterner les journées denses en découvertes urbaines et les demi-journées plus souples, souvent nécessaires pour absorber le décalage horaire, les imprévus météorologiques et simplement la fatigue d'un voyage à l'autre bout du monde.</p>
 			
 			<h2>Jours 1 à 5 : L'immersion dans Tokyo</h2>
@@ -58,18 +60,20 @@ const articles: Article[] = [
 			
 			<h2>Conseil Logistique Ultime</h2>
 			<p>Simulez vos trajets longue distance avant d'acheter un pass ferroviaire. Depuis les hausses de prix de la fin 2023, un simple aller-retour Tokyo-Kyoto ne rentabilise plus systématiquement un JR Pass national de 7 jours. Faites vos calculs ou privilégiez l'achat de billets à l'unité combiné à une carte Suica pour vos déplacements locaux en métro.</p>
-		`
-	},
-	{
-		slug: 'jr-pass-suica-pasmo',
-		title: 'JR Pass, Suica, Pasmo : Le guide définitif des transports',
-		excerpt: 'Quand le JR Pass national est rentable (et quand il ne l\'est plus), et pourquoi une carte IC reste absolument indispensable au quotidien dans les villes japonaises.',
-		category: 'Conseils pratiques',
-		categoryColor: 'text-orange-500',
-		readTime: '12 min',
-		date: '10 mai 2026',
-		image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "jr-pass-suica-pasmo",
+    title: "JR Pass, Suica, Pasmo : Le guide définitif des transports",
+    excerpt:
+      "Quand le JR Pass national est rentable (et quand il ne l'est plus), et pourquoi une carte IC reste absolument indispensable au quotidien dans les villes japonaises.",
+    category: "Conseils pratiques",
+    categoryColor: "text-orange-500",
+    readTime: "12 min",
+    date: "10 mai 2026",
+    image:
+      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80",
+    content: `
 			<p>Naviguer dans les réseaux de transport japonais peut paraître intimidant de prime abord : des dizaines de compagnies privées cohabitent avec le réseau national JR (Japan Railways), le tout interconnecté dans de gigantesques gares labyrinthiques. Heureusement, deux outils simplifient radicalement la vie des voyageurs : le Japan Rail Pass (JR Pass) et les cartes à puce IC (Suica, Pasmo, Icoca).</p>
 
 			<h2>1. Le Japan Rail Pass : Est-ce encore intéressant ?</h2>
@@ -110,18 +114,20 @@ const articles: Article[] = [
 
 			<h2>Conclusion Stratégique</h2>
 			<p>La stratégie optimale pour 90% des voyageurs en 2026 est la suivante : calculez le coût exact de vos trajets Shinkansen avec un simulateur en ligne. S'ils sont inférieurs à 50 000 yens, achetez vos billets Shinkansen à l'unité (en gare ou via l'app SmartEX) et utilisez une carte Suica dématérialisée sur votre smartphone pour absolument tous les autres déplacements locaux et petites dépenses.</p>
-		`
-	},
-	{
-		slug: 'kyoto-lieux-incontournables',
-		title: 'Kyoto : Guide complet des lieux incontournables et secrets',
-		excerpt: 'Prioriser les temples, éviter la surcharge de visites et découvrir l\'ancienne capitale impériale hors des sentiers battus sans subir la foule.',
-		category: 'Destinations',
-		categoryColor: 'text-blue-500',
-		readTime: '14 min',
-		date: '02 mai 2026',
-		image: 'https://images.unsplash.com/photo-1624253329394-07805228e467?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "kyoto-lieux-incontournables",
+    title: "Kyoto : Guide complet des lieux incontournables et secrets",
+    excerpt:
+      "Prioriser les temples, éviter la surcharge de visites et découvrir l'ancienne capitale impériale hors des sentiers battus sans subir la foule.",
+    category: "Destinations",
+    categoryColor: "text-blue-500",
+    readTime: "14 min",
+    date: "02 mai 2026",
+    image:
+      "https://images.unsplash.com/photo-1624253329394-07805228e467?w=1200&q=80",
+    content: `
 			<p>Ancienne capitale du Japon pendant plus d'un millénaire, Kyoto abrite une densité stupéfiante de trésors culturels : plus de 1600 temples bouddhistes, 400 sanctuaires shinto, d'innombrables jardins zen et 17 sites classés au patrimoine mondial de l'UNESCO. Mais cette abondance est aussi le plus grand piège pour le voyageur : vouloir tout voir, courir d'un bout à l'autre de la ville, et finir par faire une "overdose de temples". Voici comment organiser vos visites de manière stratégique et respectueuse.</p>
 
 			<h2>1. Higashiyama : L'Est historique</h2>
@@ -154,18 +160,20 @@ const articles: Article[] = [
 				<li><strong>Utilisez le métro et le train :</strong> Les bus de Kyoto sont systématiquement pleins à craquer et coincés dans les embouteillages. Chaque fois que cela est possible, combinez train, métro et marche à pied.</li>
 				<li><strong>Rythme :</strong> Fixez-vous une limite de deux grands sites par jour. Utilisez l'après-midi pour vous perdre dans de petites rues, faire du vélo le long de la rivière Kamo, ou vous détendre dans un café de torréfaction locale.</li>
 			</ul>
-		`
-	},
-	{
-		slug: 'quand-partir-japon',
-		title: 'Quand partir au Japon ? Le guide complet saison par saison',
-		excerpt: 'Cerisiers, canicule, typhons et feuillages d\'automne : un calendrier détaillé pour choisir votre fenêtre de départ selon votre budget, votre tolérance au climat et vos objectifs de voyage.',
-		category: 'Quand partir',
-		categoryColor: 'text-jp-red',
-		readTime: '10 min',
-		date: '15 avril 2026',
-		image: 'https://images.unsplash.com/photo-1522850959076-3297a3115053?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "quand-partir-japon",
+    title: "Quand partir au Japon ? Le guide complet saison par saison",
+    excerpt:
+      "Cerisiers, canicule, typhons et feuillages d'automne : un calendrier détaillé pour choisir votre fenêtre de départ selon votre budget, votre tolérance au climat et vos objectifs de voyage.",
+    category: "Quand partir",
+    categoryColor: "text-jp-red",
+    readTime: "10 min",
+    date: "15 avril 2026",
+    image:
+      "https://images.unsplash.com/photo-1522850959076-3297a3115053?w=1200&q=80",
+    content: `
 			<p>Choisir la date de son voyage au Japon est la décision la plus impactante que vous prendrez. L'archipel japonais s'étirant tout en longueur du nord au sud, il possède quatre saisons extrêmement marquées qui métamorphosent totalement les paysages, l'ambiance, mais aussi le prix des billets d'avion et la fréquentation touristique.</p>
 
 			<h2>1. Le Printemps (Mars à Mai) : La floraison et la foule</h2>
@@ -207,18 +215,20 @@ const articles: Article[] = [
 			<p>Si vous recherchez le climat parfait et des paysages colorés (et que vous avez un budget flexible) : <strong>Novembre</strong> ou <strong>Avril</strong>.<br>
 			Si vous fuyez la foule, souhaitez des prix doux et n'avez pas peur du froid : <strong>Février</strong>.<br>
 			Si vous voulez une immersion culturelle intense (festivals) et que vous tolérez bien la chaleur tropicale : <strong>Fin Juillet / début Août</strong>.</p>
-		`
-	},
-	{
-		slug: 'bonnes-manieres-japon',
-		title: 'Guide de survie : Les bonnes manières et le savoir-vivre au Japon',
-		excerpt: 'Ne perdez pas la face lors de votre voyage. Des transports en commun aux restaurants, découvrez les règles non écrites de la société japonaise.',
-		category: 'Conseils pratiques',
-		categoryColor: 'text-orange-500',
-		readTime: '11 min',
-		date: '28 avril 2026',
-		image: 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "bonnes-manieres-japon",
+    title: "Guide de survie : Les bonnes manières et le savoir-vivre au Japon",
+    excerpt:
+      "Ne perdez pas la face lors de votre voyage. Des transports en commun aux restaurants, découvrez les règles non écrites de la société japonaise.",
+    category: "Conseils pratiques",
+    categoryColor: "text-orange-500",
+    readTime: "11 min",
+    date: "28 avril 2026",
+    image:
+      "https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?w=1200&q=80",
+    content: `
 			<p>Le Japon est une société où l'harmonie collective (le "Wa") prime sur l'individualisme. De nombreuses règles de politesse, souvent invisibles pour un œil étranger, régissent le quotidien. Si les Japonais sont très indulgents envers les touristes ("les étrangers ne savent pas"), respecter ces codes vous ouvrira de nombreuses portes et vous vaudra le respect et l'aide précieuse des locaux.</p>
 
 			<h2>1. Dans les transports en commun</h2>
@@ -250,18 +260,20 @@ const articles: Article[] = [
 				<li><strong>Retirer ses chaussures :</strong> Vous devrez les enlever à l'entrée (le "genkan") de toutes les maisons, des auberges traditionnelles (ryokan), de la plupart des temples, et même dans les cabines d'essayage des magasins. Portez des chaussettes propres et sans trous. Dans les toilettes de ces lieux, des "chaussons de toilettes" spécifiques vous attendent à la porte. Pensez absolument à les retirer en sortant des WC !</li>
 				<li><strong>Les Onsen (bains publics) :</strong> Les règles sont drastiques. On se lave méticuleusement le corps entier sur les petits tabourets avant d'entrer dans le bain (qui ne sert qu'à la relaxation, pas au nettoyage). Le maillot de bain est interdit : la nudité totale est de rigueur. Les tatouages sont encore largement refusés (bien que cela s'assouplisse lentement) car associés à la mafia yakuza.</li>
 			</ul>
-		`
-	},
-	{
-		slug: 'budget-voyage-japon',
-		title: 'Budget complet : Combien coûte vraiment un voyage au Japon ?',
-		excerpt: 'Démystifions le mythe du Japon hors de prix. Analyse détaillée des coûts réels : avions, hôtels, nourriture, et comment voyager confortablement sans se ruiner en 2026.',
-		category: 'Conseils pratiques',
-		categoryColor: 'text-orange-500',
-		readTime: '9 min',
-		date: '10 mars 2026',
-		image: 'https://images.unsplash.com/photo-1558862148-356165e30560?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "budget-voyage-japon",
+    title: "Budget complet : Combien coûte vraiment un voyage au Japon ?",
+    excerpt:
+      "Démystifions le mythe du Japon hors de prix. Analyse détaillée des coûts réels : avions, hôtels, nourriture, et comment voyager confortablement sans se ruiner en 2026.",
+    category: "Conseils pratiques",
+    categoryColor: "text-orange-500",
+    readTime: "9 min",
+    date: "10 mars 2026",
+    image:
+      "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=1200&q=80",
+    content: `
 			<p>Le Japon traîne depuis les années 80 la réputation d'être l'un des pays les plus chers du monde. Pourtant, avec la dépréciation spectaculaire du Yen ces dernières années (autour de 160 yens pour 1 euro début 2026) et l'absence presque totale d'inflation interne pendant 30 ans, le Japon est devenu une destination extrêmement abordable pour un voyageur européen. Voici la réalité des coûts.</p>
 
 			<h2>1. Les Billets d'Avion : Le plus gros poste de dépense</h2>
@@ -304,18 +316,20 @@ const articles: Article[] = [
 				<li><strong>Profil "Confort classique" :</strong> Avion (1200€) + Business Hotels/1 Ryokan (900€) + Restaurants mixtes (500€) + Transports incluant Shinkansen unitaires (300€) + Activités/Souvenirs (250€) = <strong>~3 150 €</strong></li>
 			</ul>
 			<p>Le Japon n'est donc plus cette forteresse inabordable. Hors billet d'avion, la vie sur place y est nettement moins chère qu'à Paris, Londres ou New York.</p>
-		`
-	},
-	{
-		slug: 'gastronomie-japonaise-incontournable',
-		title: 'Au-delà des Sushis : Les 10 plats japonais à ne pas rater',
-		excerpt: 'La cuisine japonaise est classée au patrimoine immatériel de l\'UNESCO. Oubliez les clichés occidentaux et découvrez les véritables spécialités populaires et réconfortantes du quotidien nippon.',
-		category: 'Destinations',
-		categoryColor: 'text-blue-500',
-		readTime: '8 min',
-		date: '10 janvier 2026',
-		image: 'https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "gastronomie-japonaise-incontournable",
+    title: "Au-delà des Sushis : Les 10 plats japonais à ne pas rater",
+    excerpt:
+      "La cuisine japonaise est classée au patrimoine immatériel de l'UNESCO. Oubliez les clichés occidentaux et découvrez les véritables spécialités populaires et réconfortantes du quotidien nippon.",
+    category: "Destinations",
+    categoryColor: "text-blue-500",
+    readTime: "8 min",
+    date: "10 janvier 2026",
+    image:
+      "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80",
+    content: `
 			<p>Si vous pensez que les Japonais mangent des sushis tous les jours, vous faites fausse route. Le sushi reste un plat de fête, de sortie spécifique, ou pris sur le pouce. Le véritable socle de la gastronomie nippone (le <em>Washoku</em>) est infiniment plus varié, cuit, frit, et souvent basé sur des bouillons complexes. Voici les incontournables à tester sur place.</p>
 
 			<h2>1. Les Ramen : La religion nationale</h2>
@@ -347,18 +361,20 @@ const articles: Article[] = [
 
 			<h2>8. Shabu-Shabu et Sukiyaki : La convivialité</h2>
 			<p>Deux plats de fondue japonaise. Le <em>Shabu-Shabu</em> consiste à plonger quelques secondes des tranches de bœuf marbré extrêmement fines dans un bouillon d'eau bouillante ("shabu shabu" est l'onomatopée du bruit de la viande dans l'eau) puis dans des sauces (sésame ou agrume ponzu). Le <em>Sukiyaki</em> est similaire mais cuit doucement dans une poêle en fonte avec une base très sucrée et salée, puis trempé dans un œuf cru battu avant d'être mangé.</p>
-		`
-	},
-	{
-		slug: 'transports-commun-tokyo',
-		title: 'Survivre au métro de Tokyo : Mode d\'emploi et astuces',
-		excerpt: 'Le système ferroviaire le plus dense et complexe au monde n\'est pas une jungle si vous comprenez ses trois règles de base. Guide complet pour ne plus jamais se perdre à Shinjuku.',
-		category: 'Conseils pratiques',
-		categoryColor: 'text-orange-500',
-		readTime: '7 min',
-		date: '02 février 2026',
-		image: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80',
-		content: `
+		`,
+  },
+  {
+    slug: "transports-commun-tokyo",
+    title: "Survivre au métro de Tokyo : Mode d'emploi et astuces",
+    excerpt:
+      "Le système ferroviaire le plus dense et complexe au monde n'est pas une jungle si vous comprenez ses trois règles de base. Guide complet pour ne plus jamais se perdre à Shinjuku.",
+    category: "Conseils pratiques",
+    categoryColor: "text-orange-500",
+    readTime: "7 min",
+    date: "02 février 2026",
+    image:
+      "https://images.unsplash.com/photo-1542051841857-5f90071e7989?w=1200&q=80",
+    content: `
 			<p>La première fois que l'on regarde un plan complet des transports de Tokyo, cela ressemble à un plat de spaghettis de toutes les couleurs explosé sur un mur. Avec près de 40 millions de passagers quotidiens, des gares grandes comme de petites villes et une douzaine de compagnies privées concurrentes, le réseau tokyoïte est légendaire. Pourtant, grâce à une signalétique redoutablement efficace, il est très facile de s'y retrouver avec quelques clés de compréhension.</p>
 
 			<h2>1. Comprendre qui fait quoi : JR vs Tokyo Metro vs Toei</h2>
@@ -392,35 +408,35 @@ const articles: Article[] = [
 			<h2>5. L'heure de pointe et les Wagons "Women Only"</h2>
 			<p>Évitez à tout prix de voyager entre 7h30 et 9h00 du matin sur les artères principales (lignes Yamanote, Chuo, Saikyo). Les "pousseurs" en gants blancs existent vraiment pour tasser les voyageurs. Si vous voyagez avec des valises, c'est un enfer physique garanti.</p>
 			<p>Aux heures de pointe le matin et parfois le soir, les premiers ou derniers wagons (souvent signalés par des panneaux roses sur le quai) sont réservés aux femmes. C'est une mesure pour lutter contre les "chikan" (attouchements). Les hommes touristes montant dedans par inadvertance se feront poliment (mais fermement) signifier de sortir à la prochaine station.</p>
-		`
-	}
+		`,
+  },
 ];
 
 export function getArticles(): Article[] {
-	return articles;
+  return articles;
 }
 
 export function getArticle(slug: string): Article | undefined {
-	return articles.find((a) => a.slug === slug);
+  return articles.find((a) => a.slug === slug);
 }
 
 export function searchArticles(query: string, list: Article[]): Article[] {
-	const q = query.trim().toLowerCase();
-	if (!q) return list;
-	return list.filter(
-		(a) =>
-			a.title.toLowerCase().includes(q) ||
-			a.excerpt.toLowerCase().includes(q) ||
-			a.category.toLowerCase().includes(q) ||
-			a.slug.toLowerCase().includes(q)
-	);
+  const q = query.trim().toLowerCase();
+  if (!q) return list;
+  return list.filter(
+    (a) =>
+      a.title.toLowerCase().includes(q) ||
+      a.excerpt.toLowerCase().includes(q) ||
+      a.category.toLowerCase().includes(q) ||
+      a.slug.toLowerCase().includes(q),
+  );
 }
 
 export function getRelatedArticles(slug: string, limit = 2): Article[] {
-	const current = getArticle(slug);
-	if (!current) return [];
-	const others = articles.filter((a) => a.slug !== slug);
-	const sameCat = others.filter((a) => a.category === current.category);
-	const diffCat = others.filter((a) => a.category !== current.category);
-	return [...sameCat, ...diffCat].slice(0, limit);
+  const current = getArticle(slug);
+  if (!current) return [];
+  const others = articles.filter((a) => a.slug !== slug);
+  const sameCat = others.filter((a) => a.category === current.category);
+  const diffCat = others.filter((a) => a.category !== current.category);
+  return [...sameCat, ...diffCat].slice(0, limit);
 }

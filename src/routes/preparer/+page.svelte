@@ -41,7 +41,7 @@
 			highlight: true
 		},
 		{
-			title: 'Wi‑Fi pocket ou eSIM',
+			title: 'Boîtier Wi‑Fi ou eSIM',
 			desc: 'Connexion mobile pour plusieurs appareils — retrait aéroport ou livraison selon offres.',
 			href: wifi.href,
 			rel: wifi.rel,

@@ -21,12 +21,6 @@
         >
           Commencer le questionnaire →
         </a>
-        <a
-          href="/itineraires"
-          class="inline-flex items-center justify-center border border-black/20 bg-white text-[#1a1a1a] px-9 py-5 text-[11px] font-bold tracking-widest uppercase hover:border-[#bc002d] hover:text-[#bc002d] transition-all duration-300"
-        >
-          Voir les formules
-        </a>
       </div>
     </div>
   </div>
