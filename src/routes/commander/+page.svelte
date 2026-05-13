@@ -89,46 +89,73 @@
 				</p>
 			</div>
 
-			<div class="grid gap-8 md:grid-cols-2">
+			<div class="grid gap-8 lg:grid-cols-3 md:grid-cols-2">
+				<!-- BASIQUE -->
 				<div class="flex flex-col border border-gray-100 bg-[#faf9f6] p-10 shadow-sm transition hover:border-[#bc002d]/30">
-					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-jp-gray">Digital</span>
-					<h3 class="mt-4 font-serif text-3xl text-jp-black">Essentiel</h3>
+					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-jp-gray">Essentiel</span>
+					<h3 class="mt-4 font-serif text-3xl text-jp-black">Basique</h3>
+                    <p class="mt-2 text-2xl font-serif text-jp-gray">7.99€</p>
 					<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">
-						Idéal si vous savez déjà où vous positionner et souhaitez un cadre PDF clair pour vos réservations.
+						L'essentiel pour structurer votre projet sans vous ruiner.
 					</p>
 					<ul class="mt-8 space-y-3 text-sm text-jp-black">
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Itinéraire structuré (PDF)</li>
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Repères logistiques et transports</li>
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Pistes gastronomiques</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Pdf personnalité (version simplifiée)</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Grandes étapes du voyage</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Recommandations adaptées</li>
 					</ul>
 					<a
 						href="/itineraires#configurateur"
 						class="mt-10 bg-jp-black py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#bc002d]"
 					>
-						Choisir Essentiel
+						Choisir Basique
 					</a>
 				</div>
 
+				<!-- COMPLÈTE -->
 				<div class="relative flex flex-col border-2 border-[#bc002d] bg-white p-10 shadow-xl">
 					<span
 						class="absolute right-6 top-6 bg-[#bc002d] px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white"
-						>Recommandé</span
+						>Recommandée ⭐</span
 					>
-					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-[#bc002d]">Expert</span>
-					<h3 class="mt-4 font-serif text-3xl text-jp-black">Expert</h3>
+					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-[#bc002d]">Le choix idéal</span>
+					<h3 class="mt-4 font-serif text-3xl text-jp-black">Complète</h3>
+                    <p class="mt-2 text-2xl font-serif text-[#bc002d]">19.99€</p>
 					<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">
-						Pour les voyageurs qui veulent ajuster les derniers détails avec un humain avant de bloquer trains et hôtels.
+						Notre formule la plus appréciée pour un voyage organisé et serein, sans mauvaise surprise.
 					</p>
 					<ul class="mt-8 space-y-3 text-sm text-jp-black">
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Tout le pack Essentiel</li>
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Visio conseil (45 minutes)</li>
-						<li class="flex gap-3"><span class="text-[#bc002d]">—</span> Support messagerie prioritaire</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> <strong>Pdf personnalisé complet prêt a l'emploi</strong></li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Itinéraire jour par jour détaillé</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Budget précis et optimisé</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Conseil transport</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Activités et lieux concrets</li>
 					</ul>
 					<a
 						href="/itineraires#configurateur"
 						class="mt-10 bg-[#bc002d] py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-jp-black"
 					>
-						Choisir Expert
+						Choisir Complète
+					</a>
+				</div>
+
+				<!-- PREMIUM -->
+				<div class="flex flex-col border border-gray-100 bg-[#faf9f6] p-10 shadow-sm transition hover:border-[#bc002d]/30">
+					<span class="text-[10px] font-bold uppercase tracking-[0.28em] text-jp-gray">Expertise</span>
+					<h3 class="mt-4 font-serif text-3xl text-jp-black">Premium</h3>
+                    <p class="mt-2 text-2xl font-serif text-jp-gray">39.99€</p>
+					<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">
+						Pour les voyageurs exigeants qui veulent échanger pour un séjour sans faille.
+					</p>
+					<ul class="mt-8 space-y-3 text-sm text-jp-black">
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> <strong>Toute la formule complète</strong></li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Ajustements selon le projet</li>
+						<li class="flex gap-3 items-start"><span class="text-[#bc002d]">—</span> Support par mail (2 à 3 échanges pour ajuster l'itinéraire, réponse sous 48h)</li>
+					</ul>
+					<a
+						href="/itineraires#configurateur"
+						class="mt-10 bg-jp-black py-4 text-center text-[11px] font-bold uppercase tracking-[0.14em] text-white transition-colors hover:bg-[#bc002d]"
+					>
+						Choisir Premium
 					</a>
 				</div>
 			</div>

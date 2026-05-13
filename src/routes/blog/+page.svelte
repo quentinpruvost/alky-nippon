@@ -1,13 +1,25 @@
 <script lang="ts">
-	import { getArticles } from '$lib/data/articles';
+	import { page } from '$app/state';
+	import { getArticles, searchArticles } from '$lib/data/articles';
 
 	const articles = getArticles();
-	const featured = articles[0];
-	const rest = articles.slice(1);
+
+	const query = $derived(page.url.searchParams.get('q')?.trim() ?? '');
+	let draftQ = $state('');
+	$effect(() => {
+		draftQ = page.url.searchParams.get('q')?.trim() ?? '';
+	});
+	const filtered = $derived(query ? searchArticles(query, articles) : null);
+
+	const featured = $derived(!query ? articles[0] : undefined);
+	const rest = $derived(!query ? articles.slice(1) : []);
+	const searchResults = $derived(filtered ?? []);
 </script>
 
 <svelte:head>
-	<title>Blog — Guides & inspirations | AlkyNippon</title>
+	<title>
+		{query ? `Recherche « ${query} » — Blog | AlkyNippon` : 'Blog — Guides & inspirations | AlkyNippon'}
+	</title>
 	<meta
 		name="description"
 		content="Articles AlkyNippon : itinéraires, transports, destinations et saisons pour préparer votre voyage au Japon."
@@ -27,89 +39,170 @@
 					>Longs formats pour voyager avec méthode.</span
 				>
 			</h1>
+
+			<form class="mt-10 flex max-w-xl flex-col gap-3 sm:flex-row sm:items-stretch" action="/blog" method="get">
+				<label class="sr-only" for="blog-search-q">Rechercher un article</label>
+				<input
+					id="blog-search-q"
+					type="search"
+					name="q"
+					bind:value={draftQ}
+					placeholder="Ex. Kyoto, JR Pass, deux semaines…"
+					class="min-h-12 flex-1 border border-gray-200 px-4 py-3 text-sm outline-none ring-[#bc002d] focus:border-[#bc002d] focus:ring-1"
+				/>
+				<button
+					type="submit"
+					class="bg-[#bc002d] px-8 py-3 text-[11px] font-bold uppercase tracking-widest text-white transition-colors hover:bg-black"
+				>
+					Rechercher
+				</button>
+			</form>
 		</header>
 
-		{#if featured}
-			<a
-				href="/blog/{featured.slug}"
-				class="mag-feature group mb-20 grid gap-10 overflow-hidden border border-gray-200/90 bg-white shadow-[0_24px_80px_-24px_rgba(0,0,0,0.12)] lg:mb-28 lg:grid-cols-12 lg:gap-0"
-			>
-				<div class="relative aspect-[16/11] bg-gray-100 lg:col-span-7 lg:aspect-auto lg:min-h-[420px]">
-					<img
-						src={featured.image}
-						alt=""
-						class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-[1.03]"
-						fetchpriority="high"
-					/>
-					<div
-						class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent lg:bg-gradient-to-r lg:from-black/40 lg:to-transparent"
-					></div>
-					<span
-						class="absolute left-6 top-6 bg-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc002d] lg:left-10 lg:top-10"
-						>À la une</span
-					>
-				</div>
-				<div class="flex flex-col justify-center px-8 pb-12 pt-4 lg:col-span-5 lg:px-12 lg:pb-16 lg:pt-16">
-					<span class="text-[10px] font-bold uppercase tracking-[0.28em] {featured.categoryColor}">{featured.category}</span>
-					<h2 class="mt-5 font-serif text-3xl leading-tight text-jp-black transition group-hover:text-[#bc002d] md:text-4xl">
-						{featured.title}
-					</h2>
-					<p class="mt-6 text-base leading-relaxed text-jp-gray">{featured.excerpt}</p>
-					<div class="mt-8 flex flex-wrap items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-jp-gray">
-						<span>{featured.date}</span>
-						<span class="h-3 w-px bg-gray-300"></span>
-						<span>{featured.readTime}</span>
-					</div>
-					<span
-						class="mt-10 inline-flex w-fit items-center gap-2 border-b-2 border-[#bc002d]/35 pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#bc002d] transition group-hover:border-[#bc002d]"
-					>
-						Lire l’article →
-					</span>
-				</div>
-			</a>
-		{/if}
+		{#if query}
+			<div class="mb-10 flex flex-wrap items-center justify-between gap-4 border-b border-gray-200 pb-8">
+				<p class="text-sm text-jp-gray">
+					<span class="font-semibold text-jp-black">{searchResults.length}</span>
+					résultat{searchResults.length !== 1 ? 's' : ''} pour « <span class="text-jp-black">{query}</span> »
+				</p>
+				<a href="/blog" class="text-[11px] font-bold uppercase tracking-widest text-[#bc002d] hover:underline">
+					Effacer la recherche
+				</a>
+			</div>
 
-		<div class="mb-12 flex items-end justify-between border-t border-gray-300/80 pt-12">
-			<h3 class="font-serif text-2xl text-jp-black md:text-3xl">Autres lectures</h3>
-			<span class="hidden text-[10px] uppercase tracking-[0.22em] text-jp-gray sm:block">Curateur éditorial</span>
-		</div>
-
-		<div class="grid gap-10 md:grid-cols-2 lg:gap-x-12 lg:gap-y-14">
-			{#each rest as a}
-				<article class="mag-card group flex flex-col border-t border-gray-200 pt-10">
-					<a href="/blog/{a.slug}" class="relative mb-8 block aspect-[16/10] overflow-hidden bg-gray-100">
+			{#if searchResults.length === 0}
+				<p class="max-w-xl font-serif text-xl text-jp-black">
+					Aucun article ne correspond à cette recherche.
+				</p>
+				<p class="mt-4 max-w-xl text-sm text-jp-gray">
+					Essayez un autre mot-clé (ville, transport, saison) ou parcourez la liste complète ci-dessous une fois la recherche
+					effacée.
+				</p>
+			{:else}
+				<div class="grid gap-10 md:grid-cols-2 lg:gap-x-12 lg:gap-y-14">
+					{#each searchResults as a}
+						<article class="mag-card group flex flex-col border-t border-gray-200 pt-10">
+							<a href="/blog/{a.slug}" class="relative mb-8 block aspect-[16/10] overflow-hidden bg-gray-100">
+								<img
+									src={a.image}
+									alt=""
+									class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+									loading="lazy"
+								/>
+								<span
+									class="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] truncate bg-white/95 px-3 py-1 text-[9px] font-bold uppercase tracking-widest {a.categoryColor}"
+									>{a.category}</span
+								>
+							</a>
+							<h2 class="font-serif text-2xl leading-snug text-jp-black md:text-[1.65rem]">
+								<a href="/blog/{a.slug}" class="transition hover:text-[#bc002d]">{a.title}</a>
+							</h2>
+							<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">{a.excerpt}</p>
+							<a
+								href="/blog/{a.slug}"
+								class="mt-8 inline-flex text-[11px] font-bold uppercase tracking-[0.14em] text-[#bc002d] underline-offset-4 hover:underline"
+							>
+								Lire l’article →
+							</a>
+						</article>
+					{/each}
+				</div>
+			{/if}
+		{:else}
+			{#if featured}
+				<a
+					href="/blog/{featured.slug}"
+					class="mag-feature group mb-20 grid gap-10 overflow-hidden border border-gray-200/90 bg-white shadow-[0_24px_80px_-24px_rgba(0,0,0,0.12)] lg:mb-28 lg:grid-cols-12 lg:gap-0"
+				>
+					<div class="relative aspect-[16/11] bg-gray-100 lg:col-span-7 lg:aspect-auto lg:min-h-[420px]">
 						<img
-							src={a.image}
+							src={featured.image}
 							alt=""
-							class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-							loading="lazy"
+							class="absolute inset-0 h-full w-full object-cover transition duration-[1.2s] group-hover:scale-[1.03]"
+							fetchpriority="high"
 						/>
+						<div
+							class="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent lg:bg-gradient-to-r lg:from-black/40 lg:to-transparent"
+						></div>
 						<span
-							class="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] truncate bg-white/95 px-3 py-1 text-[9px] font-bold uppercase tracking-widest {a.categoryColor}"
-							>{a.category}</span
+							class="absolute left-6 top-6 bg-white px-4 py-1.5 text-[10px] font-bold uppercase tracking-[0.18em] text-[#bc002d] lg:left-10 lg:top-10"
+							>À la une</span
 						>
-					</a>
-					<h2 class="font-serif text-2xl leading-snug text-jp-black md:text-[1.65rem]">
-						<a href="/blog/{a.slug}" class="transition hover:text-[#bc002d]">{a.title}</a>
-					</h2>
-					<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">{a.excerpt}</p>
-					<div class="mt-6 flex flex-wrap gap-5 text-[10px] uppercase tracking-[0.18em] text-jp-gray">
-						<span>{a.date}</span>
-						<span>{a.readTime}</span>
 					</div>
-					<a
-						href="/blog/{a.slug}"
-						class="mt-8 inline-flex text-[11px] font-bold uppercase tracking-[0.14em] text-[#bc002d] underline-offset-4 hover:underline"
-					>
-						Continuer la lecture
-					</a>
-				</article>
-			{/each}
-		</div>
+					<div class="flex flex-col justify-center px-8 pb-12 pt-4 lg:col-span-5 lg:px-12 lg:pb-16 lg:pt-16">
+						<span class="text-[10px] font-bold uppercase tracking-[0.28em] {featured.categoryColor}">{featured.category}</span>
+						<h2 class="mt-5 font-serif text-3xl leading-tight text-jp-black transition group-hover:text-[#bc002d] md:text-4xl">
+							{featured.title}
+						</h2>
+						<p class="mt-6 text-base leading-relaxed text-jp-gray">{featured.excerpt}</p>
+						<div class="mt-8 flex flex-wrap items-center gap-6 text-[10px] uppercase tracking-[0.2em] text-jp-gray">
+							<span>{featured.date}</span>
+							<span class="h-3 w-px bg-gray-300"></span>
+							<span>{featured.readTime}</span>
+						</div>
+						<span
+							class="mt-10 inline-flex w-fit items-center gap-2 border-b-2 border-[#bc002d]/35 pb-1 text-[11px] font-bold uppercase tracking-[0.14em] text-[#bc002d] transition group-hover:border-[#bc002d]"
+						>
+							Lire l’article →
+						</span>
+					</div>
+				</a>
+			{/if}
+
+			<div class="mb-12 flex items-end justify-between border-t border-gray-300/80 pt-12">
+				<h3 class="font-serif text-2xl text-jp-black md:text-3xl">Autres lectures</h3>
+				<span class="hidden text-[10px] uppercase tracking-[0.22em] text-jp-gray sm:block">Curateur éditorial</span>
+			</div>
+
+			<div class="grid gap-10 md:grid-cols-2 lg:gap-x-12 lg:gap-y-14">
+				{#each rest as a}
+					<article class="mag-card group flex flex-col border-t border-gray-200 pt-10">
+						<a href="/blog/{a.slug}" class="relative mb-8 block aspect-[16/10] overflow-hidden bg-gray-100">
+							<img
+								src={a.image}
+								alt=""
+								class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+								loading="lazy"
+							/>
+							<span
+								class="absolute bottom-4 left-4 max-w-[calc(100%-2rem)] truncate bg-white/95 px-3 py-1 text-[9px] font-bold uppercase tracking-widest {a.categoryColor}"
+								>{a.category}</span
+							>
+						</a>
+						<h2 class="font-serif text-2xl leading-snug text-jp-black md:text-[1.65rem]">
+							<a href="/blog/{a.slug}" class="transition hover:text-[#bc002d]">{a.title}</a>
+						</h2>
+						<p class="mt-4 flex-1 text-sm leading-relaxed text-jp-gray">{a.excerpt}</p>
+						<div class="mt-6 flex flex-wrap gap-5 text-[10px] uppercase tracking-[0.18em] text-jp-gray">
+							<span>{a.date}</span>
+							<span>{a.readTime}</span>
+						</div>
+						<a
+							href="/blog/{a.slug}"
+							class="mt-8 inline-flex text-[11px] font-bold uppercase tracking-[0.14em] text-[#bc002d] underline-offset-4 hover:underline"
+						>
+							Continuer la lecture
+						</a>
+					</article>
+				{/each}
+			</div>
+		{/if}
 	</div>
 </div>
 
 <style>
+	.sr-only {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
 	.mag-feature {
 		transition:
 			box-shadow 0.35s ease,

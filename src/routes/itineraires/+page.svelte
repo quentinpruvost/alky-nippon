@@ -157,54 +157,81 @@
                 </div>
             {/if}
 
-            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- ESSENTIEL -->
-                <div class="bg-white border border-gray-100 p-10 flex flex-col items-center shadow-sm relative transition-all hover:shadow-md">
-                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-gray-400">Digital</span>
-                    <div class="text-5xl font-serif mb-8 text-black">0€</div>
-                    <ul class="text-left space-y-4 mb-12 text-sm text-gray-500">
-                        <li>• Itinéraire complet (PDF)</li>
-                        <li>• Guide logistique complet</li>
-                        <li>• Liste de restaurants typiques</li>
+            <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- BASIQUE -->
+                <div class="bg-white border border-gray-100 p-8 flex flex-col items-center shadow-sm relative transition-all hover:shadow-md">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-gray-400">Basique</span>
+                    <div class="text-4xl font-serif mb-8 text-black">7.99€</div>
+                    <ul class="text-left space-y-4 mb-12 text-sm text-gray-500 w-full">
+                        <li>• Pdf personnalité (version simplifiée)</li>
+                        <li>• Grandes étapes du voyage</li>
+                        <li>• Recommandations adaptées</li>
                     </ul>
                     <button 
                         disabled={isSubmitting}
-                        onclick={() => handlePaymentAndSubmit('ESSENTIEL')} 
-                        class="w-full bg-black text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-[#bc002d] transition-all disabled:opacity-50"
+                        onclick={() => handlePaymentAndSubmit('BASIQUE')} 
+                        class="mt-auto w-full bg-black text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-[#bc002d] transition-all disabled:opacity-50"
                     >
-                        {#if isSubmitting && selectedPlan === 'ESSENTIEL'}
+                        {#if isSubmitting && selectedPlan === 'BASIQUE'}
                             <span class="flex items-center justify-center gap-2">
                                 <span class="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                                Connexion sécurisée...
+                                Connexion...
                             </span>
                         {:else}
-                            Obtenir mon itinéraire
+                            Choisir Basique
+                        {/if}
+                    </button>
+                </div>
+
+                <!-- COMPLÈTE -->
+                <div class="bg-white border-2 border-[#bc002d] p-8 flex flex-col items-center shadow-2xl relative scale-105 z-10">
+                    <div class="bg-[#bc002d] text-white text-[9px] font-bold px-6 py-1.5 absolute top-4 -right-10 rotate-45 w-40 uppercase tracking-tighter">Recommandée ⭐</div>
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-[#bc002d]">Complète</span>
+                    <div class="text-4xl font-serif mb-8 text-black">19.99€</div>
+                    <ul class="text-left space-y-4 mb-12 text-sm text-gray-700 w-full">
+                        <li>• <strong>Pdf personnalisé complet prêt a l'emploi</strong></li>
+                        <li>• Itinéraire jour par jour détaillé</li>
+                        <li>• Budget précis et optimisé</li>
+                        <li>• Conseil transport</li>
+                        <li>• Activités et lieux concrets</li>
+                    </ul>
+                    <button 
+                        disabled={isSubmitting}
+                        onclick={() => handlePaymentAndSubmit('COMPLÈTE')} 
+                        class="mt-auto w-full bg-[#bc002d] text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-black transition-all disabled:opacity-50"
+                    >
+                        {#if isSubmitting && selectedPlan === 'COMPLÈTE'}
+                            <span class="flex items-center justify-center gap-2">
+                                <span class="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
+                                Paiement...
+                            </span>
+                        {:else}
+                            Choisir Complète
                         {/if}
                     </button>
                 </div>
 
                 <!-- PREMIUM -->
-                <div class="bg-white border-2 border-[#bc002d] p-10 flex flex-col items-center shadow-2xl relative scale-105 z-10">
-                    <div class="bg-[#bc002d] text-white text-[9px] font-bold px-6 py-1.5 absolute top-4 -right-10 rotate-45 w-40 uppercase tracking-tighter">Recommandé</div>
-                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-[#bc002d]">Expert</span>
-                    <div class="text-5xl font-serif mb-8 text-black">0€</div>
-                    <ul class="text-left space-y-4 mb-12 text-sm text-gray-700">
-                        <li>• <strong>Tout de la formule Digital</strong></li>
-                        <li>• <strong>Visio avec un expert (45 min)</strong></li>
-                        <li>• Support WhatsApp prioritaire</li>
+                <div class="bg-white border border-gray-100 p-8 flex flex-col items-center shadow-sm relative transition-all hover:shadow-md">
+                    <span class="text-[10px] font-bold tracking-[0.3em] uppercase mb-4 text-gray-400">Premium</span>
+                    <div class="text-4xl font-serif mb-8 text-black">39.99€</div>
+                    <ul class="text-left space-y-4 mb-12 text-sm text-gray-500 w-full">
+                        <li>• <strong>Toute la formule complète</strong></li>
+                        <li>• Ajustements selon le projet</li>
+                        <li>• Support par mail (2 à 3 échanges pour ajuster l'itinéraire, réponse sous 48h)</li>
                     </ul>
                     <button 
                         disabled={isSubmitting}
                         onclick={() => handlePaymentAndSubmit('PREMIUM')} 
-                        class="w-full bg-[#bc002d] text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-black transition-all disabled:opacity-50"
+                        class="mt-auto w-full bg-black text-white py-5 font-bold text-[11px] tracking-widest uppercase hover:bg-[#bc002d] transition-all disabled:opacity-50"
                     >
                         {#if isSubmitting && selectedPlan === 'PREMIUM'}
                             <span class="flex items-center justify-center gap-2">
                                 <span class="w-3 h-3 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
-                                Paiement en cours...
+                                Connexion...
                             </span>
                         {:else}
-                            Réserver avec un expert
+                            Choisir Premium
                         {/if}
                     </button>
                 </div>

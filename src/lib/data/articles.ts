@@ -86,6 +86,19 @@ export function getArticle(slug: string): Article | undefined {
 }
 
 /** Articles du même rubrique en priorité, puis les autres (exclut le slug courant). */
+/** Filtre magazine (titre, chapô, catégorie, slug). */
+export function searchArticles(query: string, list: Article[]): Article[] {
+	const q = query.trim().toLowerCase();
+	if (!q) return list;
+	return list.filter(
+		(a) =>
+			a.title.toLowerCase().includes(q) ||
+			a.excerpt.toLowerCase().includes(q) ||
+			a.category.toLowerCase().includes(q) ||
+			a.slug.toLowerCase().includes(q)
+	);
+}
+
 export function getRelatedArticles(slug: string, limit = 2): Article[] {
 	const current = getArticle(slug);
 	if (!current) return [];
